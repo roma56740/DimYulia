@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дима и Юля</title>
+    <meta name="description" content="Свадебное приглашение Димы и Юли">
+    <link rel="stylesheet" href="/static/css/style.css?v=4">
+</head>
+<body>
+    <div class="cursor-light" aria-hidden="true"></div>
+
+    <main class="page">
+        <section class="hero" id="top">
+            <div class="hero__bg">
+                <img src="{{ url_for('static', path='img/11.jpg') }}" alt="Дима и Юля">
+            </div>
+            <div class="hero__noise"></div>
+            <div class="hero__shade"></div>
+
+            <header class="topbar">
+                <a href="#day">день</a>
+                <span>17.08.2026</span>
+                <a href="#rsvp">анкета</a>
+            </header>
+
+            <div class="hero__inner">
+                <p class="kicker reveal">свадебное приглашение</p>
+                <h1 class="hero__title" data-split>Дима и Юля</h1>
+                <p class="hero__lead reveal reveal-right">Мы будем счастливы разделить этот день с вами.</p>
+                <a class="button button--light reveal reveal-up" href="#timer">смотреть приглашение</a>
+            </div>
+
+            <div class="hero__date-card reveal reveal-left">
+                <span>save the date</span>
+                <strong>17</strong>
+                <small>августа 2026</small>
+            </div>
+        </section>
+
+        <section class="timer-section" id="timer">
+            <div class="container timer-layout">
+                <div class="section-title reveal reveal-left">
+                    <p class="kicker">до свадьбы осталось</p>
+                    <h2>Время до встречи</h2>
+                    <p>С каждым днём праздник становится ближе. Скоро рядом соберутся самые важные люди.</p>
+                </div>
+
+                <div class="timer reveal reveal-right" data-date="2026-08-17T14:30:00">
+                    <div><strong data-days>0</strong><span>дней</span></div>
+                    <div><strong data-hours>0</strong><span>часов</span></div>
+                    <div><strong data-minutes>0</strong><span>минут</span></div>
+                    <div><strong data-seconds>0</strong><span>секунд</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="letter">
+            <div class="container letter-grid">
+                <div class="letter-card reveal reveal-left">
+                    <p class="kicker">дорогие гости</p>
+                    <h2>Мы женимся</h2>
+                    <p>Совсем скоро состоится день, который хочется прожить рядом с родными и близкими.</p>
+                    <p>Будем рады видеть вас на нашем празднике, разделить радость, улыбки и самые тёплые моменты.</p>
+                </div>
+
+                <div class="photo-orbit reveal reveal-right">
+                    <img class="photo-orbit__main" src="{{ url_for('static', path='img/6.jpg') }}" alt="Руки Димы и Юли">
+                    <img class="photo-orbit__small photo-orbit__small--one" src="{{ url_for('static', path='img/7.jpg') }}" alt="Дима и Юля">
+                    <img class="photo-orbit__small photo-orbit__small--two" src="{{ url_for('static', path='img/10.jpg') }}" alt="Save the date">
+                </div>
+            </div>
+        </section>
+
+        <section class="day" id="day">
+            <div class="container day-grid">
+                <div class="day__sticky reveal reveal-left">
+                    <p class="kicker">план дня</p>
+                    <h2>Тайминг</h2>
+                    <p>Три главных момента дня. Остальное — живые разговоры, улыбки и праздник.</p>
+                </div>
+
+                <div class="day-cards">
+                    <article class="day-card reveal reveal-right">
+                        <span>14:30</span>
+                        <div>
+                            <h3>Сбор гостей</h3>
+                            <p>Встречаемся, знакомимся, делаем первые фото и настраиваемся на тёплый вечер.</p>
+                        </div>
+                    </article>
+                    <article class="day-card reveal reveal-right">
+                        <span>15:00</span>
+                        <div>
+                            <h3>Церемония</h3>
+                            <p>Самый важный момент дня. Просим прийти немного заранее.</p>
+                        </div>
+                    </article>
+                    <article class="day-card reveal reveal-right">
+                        <span>17:00</span>
+                        <div>
+                            <h3>Праздничный ужин</h3>
+                            <p>Уютный вечер с близкими, поздравлениями и красивыми воспоминаниями.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="cinema">
+            <div class="cinema__image reveal reveal-zoom">
+                <img src="{{ url_for('static', path='img/8.jpg') }}" alt="Дима и Юля">
+            </div>
+            <div class="cinema__text reveal reveal-up">
+                <p class="kicker">маленькая история</p>
+                <h2>Один день, который станет началом новой главы</h2>
+            </div>
+        </section>
+
+        <section class="location">
+            <div class="container location-grid">
+                <div class="location-card reveal reveal-left">
+                    <p class="kicker">локация</p>
+                    <h2>Место праздника</h2>
+                    <p>Название площадки и адрес добавим здесь.</p>
+                    <a class="button" href="https://yandex.ru/maps/" target="_blank">открыть карту</a>
+                </div>
+                <div class="location-photo reveal reveal-right">
+                    <img src="{{ url_for('static', path='img/9.jpg') }}" alt="Дима и Юля">
+                </div>
+            </div>
+        </section>
+
+        <section class="dress">
+            <div class="container dress-grid">
+                <div class="section-title reveal reveal-left">
+                    <p class="kicker">дресс-код</p>
+                    <h2>Мягкая палитра</h2>
+                    <p>Для нас главное — ваше присутствие. Будем рады, если образы поддержат спокойные природные оттенки.</p>
+                </div>
+                <div class="palette reveal reveal-right">
+                    <span style="--c:#f7f1e8"><b>молочный</b></span>
+                    <span style="--c:#dfcab9"><b>песочный</b></span>
+                    <span style="--c:#bd9582"><b>пудровый</b></span>
+                    <span style="--c:#8c9a8d"><b>оливковый</b></span>
+                    <span style="--c:#2e4b54"><b>графит</b></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="details">
+            <div class="container">
+                <div class="section-title reveal">
+                    <p class="kicker">детали</p>
+                    <h2>Несколько просьб</h2>
+                </div>
+                <div class="detail-row">
+                    <article class="detail-card reveal reveal-left"><span>01</span><p>Будем благодарны, если праздник пройдёт без криков «Горько».</p></article>
+                    <article class="detail-card reveal reveal-up"><span>02</span><p>Вместо цветов можно выбрать бутылку любимого напитка.</p></article>
+                    <article class="detail-card reveal reveal-right"><span>03</span><p>Главный подарок для нас — ваше присутствие и хорошее настроение.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery">
+            <div class="gallery__head container reveal">
+                <p class="kicker">моменты</p>
+                <h2>Фото как воспоминания</h2>
+            </div>
+            <div class="gallery-track" aria-label="Галерея фотографий">
+                <img src="{{ url_for('static', path='img/1.jpg') }}" alt="Дима и Юля">
+                <img src="{{ url_for('static', path='img/2.jpg') }}" alt="Дима и Юля">
+                <img src="{{ url_for('static', path='img/3.jpg') }}" alt="Дима и Юля">
+                <img src="{{ url_for('static', path='img/4.jpg') }}" alt="Дима и Юля">
+                <img src="{{ url_for('static', path='img/5.jpg') }}" alt="Дима и Юля">
+                <img src="{{ url_for('static', path='img/10.jpg') }}" alt="Дима и Юля">
+            </div>
+        </section>
+
+        <section class="rsvp" id="rsvp">
+            <div class="container rsvp-grid">
+                <div class="rsvp-copy reveal reveal-left">
+                    <p class="kicker">анкета гостя</p>
+                    <h2>Будете с нами?</h2>
+                    <p>Заполните короткую анкету. Ответ поможет заранее подготовить праздник.</p>
+                </div>
+                <form class="rsvp-form reveal reveal-right">
+                    <label><span>Ваше имя</span><input type="text" name="name" placeholder="Например, Анна" required></label>
+                    <label><span>Присутствие</span><select name="status" required><option value="">Выберите вариант</option><option value="yes">Буду</option><option value="no">Не смогу прийти</option></select></label>
+                    <label><span>Комментарий</span><textarea name="comment" rows="4" placeholder="Пожелания или важные детали"></textarea></label>
+                    <button type="submit">отправить ответ</button>
+                    <p class="form-success">Спасибо! Ответ сохранён на экране.</p>
+                </form>
+            </div>
+        </section>
+
+        <section class="final">
+            <div class="container final-grid">
+                <div class="final-copy reveal">
+                    <p class="kicker kicker--light">финал</p>
+                    <h2>До встречи на свадьбе</h2>
+                    <p>В конце — небольшое видео о нас. Пусть оно станет началом большого праздника.</p>
+                </div>
+                <div class="video-card reveal reveal-zoom">
+                    <video controls playsinline preload="metadata" poster="{{ url_for('static', path='img/11.jpg') }}">
+                        <source src="{{ url_for('static', path='video/wedding.mp4') }}" type="video/mp4">
+                        Видео не поддерживается вашим браузером.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <span>Дима и Юля</span>
+            <a href="#top">наверх</a>
+        </footer>
+    </main>
+
+    <script src="/static/js/app.js?v=4"></script>
+</body>
+</html>
+
