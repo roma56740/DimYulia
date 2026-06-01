@@ -21,10 +21,16 @@ templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
 
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse(
+        name="index.html",
+        request=request,
+        context={
+            "request": request,
+            "title": "Дима и Юля",
+        },
+    )
 
 
 @app.get("/health")
 async def health():
     return {"status": "ok"}
-
