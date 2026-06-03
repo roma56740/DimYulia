@@ -15,13 +15,19 @@ function initSplitTitle() {
     }
 
     const text = title.textContent.trim();
+    const words = text.split(/\s+/);
     title.textContent = "";
 
-    [...text].forEach((letter, index) => {
+    words.forEach((word, index) => {
         const span = document.createElement("span");
-        span.textContent = letter === " " ? "\u00A0" : letter;
-        span.style.animationDelay = `${index * 0.045}s`;
+        span.textContent = word;
+        span.style.animation = "letterIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards";
+        span.style.animationDelay = `${index * 0.14}s`;
         title.appendChild(span);
+
+        if (index !== words.length - 1) {
+            title.appendChild(document.createTextNode(" "));
+        }
     });
 }
 
@@ -62,7 +68,7 @@ function initTimer() {
     const update = () => {
         const distance = Math.max(target - Date.now(), 0);
 
-        days.textContent = Math.floor(distance / (1000 * 60 * 60 * 24));
+        days.textContent = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, "0");
         hours.textContent = String(Math.floor((distance / (1000 * 60 * 60)) % 24)).padStart(2, "0");
         minutes.textContent = String(Math.floor((distance / (1000 * 60)) % 60)).padStart(2, "0");
         seconds.textContent = String(Math.floor((distance / 1000) % 60)).padStart(2, "0");
@@ -86,20 +92,13 @@ function initCursorLight() {
 
 function initScrollMotion() {
     const heroImage = document.querySelector(".hero__bg img");
-    const cinemaImage = document.querySelector(".cinema__image img");
     const gallery = document.querySelector(".gallery-track");
 
     const update = () => {
         const scrollY = window.scrollY || 0;
 
         if (heroImage) {
-            heroImage.style.transform = `scale(${1.06 + Math.min(scrollY / 7000, 0.08)}) translateY(${scrollY * 0.025}px)`;
-        }
-
-        if (cinemaImage) {
-            const rect = cinemaImage.getBoundingClientRect();
-            const progress = Math.max(-1, Math.min(1, rect.top / window.innerHeight));
-            cinemaImage.style.transform = `scale(${1.03 - progress * 0.02}) rotate(${progress * -1.2}deg)`;
+            heroImage.style.transform = `scale(${1.02 + Math.min(scrollY / 9000, 0.04)}) translateY(${scrollY * 0.018}px)`;
         }
 
         if (gallery && window.innerWidth > 760) {
@@ -120,8 +119,58 @@ function initRsvpForm() {
         return;
     }
 
-    form.addEventListener("submit", (event) => {
+    const message = form.querySelector(".form-success");
+    const button = form.querySelector("button");
+
+    form.addEventListener("submit", async (event) => {
         event.preventDefault();
-        form.classList.add("rsvp-form--sent");
+
+        form.classList.remove("rsvp-form--sent", "rsvp-form--error");
+        form.classList.add("rsvp-form--loading");
+
+        if (button) {
+            button.textContent = "отправляем";
+        }
+
+        const formData = new FormData(form);
+        const payload = {
+            name: String(formData.get("name") || "").trim(),
+            status: String(formData.get("status") || "").trim(),
+            comment: String(formData.get("comment") || "").trim(),
+        };
+
+        try {
+            const response = await fetch("/api/rsvp", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(payload),
+            });
+
+            if (!response.ok) {
+                throw new Error("request failed");
+            }
+
+            form.classList.add("rsvp-form--sent");
+
+            if (message) {
+                message.textContent = "Спасибо! Ответ отправлен.";
+            }
+
+            form.reset();
+        } catch (error) {
+            form.classList.add("rsvp-form--error");
+
+            if (message) {
+                message.textContent = "Не получилось отправить ответ. Попробуйте ещё раз.";
+            }
+        } finally {
+            form.classList.remove("rsvp-form--loading");
+
+            if (button) {
+                button.textContent = "отправить ответ";
+            }
+        }
     });
 }
