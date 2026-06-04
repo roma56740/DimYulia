@@ -3112,3 +3112,146 @@ p {
         height: 210px !important;
     }
 }
+
+/* PATCH v10: mobile hero layout fix */
+@media (max-width: 760px) {
+    .hero {
+        min-height: 100svh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 92px 14px 238px;
+    }
+
+    .hero__bg img {
+        object-position: center center;
+        transform: scale(1.02);
+    }
+
+    .hero__shade {
+        background:
+            linear-gradient(180deg, rgba(36, 63, 70, 0.08), rgba(36, 63, 70, 0.28) 42%, rgba(36, 63, 70, 0.84)),
+            linear-gradient(90deg, rgba(36, 63, 70, 0.52), rgba(36, 63, 70, 0.18) 62%, rgba(36, 63, 70, 0.55));
+    }
+
+    .hero__inner {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero__kicker,
+    .hero__inner .kicker {
+        margin: 0 0 16px;
+        text-align: center;
+    }
+
+    .hero__title {
+        width: 100%;
+        max-width: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+        text-align: center;
+        white-space: nowrap;
+        font-size: clamp(48px, 13.4vw, 68px);
+        line-height: 0.9;
+        letter-spacing: -0.055em;
+    }
+
+    .hero__title span {
+        white-space: nowrap;
+    }
+
+    .hero .button--light {
+        position: absolute;
+        left: 14px;
+        right: 14px;
+        bottom: 28px;
+        z-index: 6;
+        width: auto;
+        min-height: 62px;
+        margin: 0;
+        padding: 0 18px;
+        border-radius: 999px;
+        font-size: 11px;
+        letter-spacing: 0.16em;
+    }
+
+    .hero__date-card {
+        position: absolute;
+        left: 14px;
+        right: 14px;
+        bottom: 106px;
+        z-index: 5;
+        width: auto;
+        max-width: none;
+        margin: 0;
+        padding: 16px 18px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-areas:
+            "label number"
+            "date number";
+        align-items: center;
+        column-gap: 18px;
+        border-radius: 24px;
+        background: rgba(36, 63, 70, 0.42);
+        backdrop-filter: blur(18px);
+        transform: none !important;
+    }
+
+    .hero__date-card span {
+        grid-area: label;
+        align-self: end;
+        text-align: left;
+        font-size: 11px;
+        line-height: 1.2;
+    }
+
+    .hero__date-card small {
+        grid-area: date;
+        align-self: start;
+        text-align: left;
+        font-size: 11px;
+        line-height: 1.35;
+    }
+
+    .hero__date-card strong {
+        grid-area: number;
+        font-size: 78px;
+        line-height: 0.82;
+        text-align: right;
+        letter-spacing: -0.08em;
+    }
+}
+
+@media (max-width: 420px) {
+    .hero__title {
+        font-size: clamp(44px, 12.6vw, 58px);
+        letter-spacing: -0.05em;
+    }
+
+    .hero {
+        padding-bottom: 228px;
+    }
+
+    .hero__date-card {
+        bottom: 100px;
+        padding: 15px 16px;
+    }
+
+    .hero__date-card strong {
+        font-size: 70px;
+    }
+
+    .hero .button--light {
+        min-height: 58px;
+    }
+}
