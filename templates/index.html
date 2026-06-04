@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Дима и Юля</title>
     <meta name="description" content="Свадебное приглашение Димы и Юли">
-    <link rel="stylesheet" href="/static/css/style.css?v=13">
+    <link rel="stylesheet" href="/static/css/style.css?v=14">
 </head>
 <body>
     <div class="cursor-light" aria-hidden="true"></div>
@@ -13,7 +13,7 @@
     <main class="page">
         <section class="hero" id="top">
             <div class="hero__bg">
-                <img src="{{ url_for('static', path='img/11.jpg') }}" alt="Дима и Юля">
+                <img src="{{ url_for('static', path='img/12.jpg') }}" alt="Дима и Юля">
             </div>
             <div class="hero__noise"></div>
             <div class="hero__shade"></div>
@@ -26,7 +26,7 @@
 
             <div class="hero__inner">
                 <p class="kicker reveal hero__kicker">она сказала ДА!</p>
-                <h1 class="hero__title" data-split>Дима и Юля</h1>
+                <h1 class="hero__title"><span>Дима и Юля</span></h1>
                 <a class="button button--light reveal reveal-up" href="#timer">смотреть приглашение</a>
             </div>
 
@@ -66,7 +66,7 @@
                 <div class="photo-orbit reveal reveal-right">
                     <img class="photo-orbit__main" src="{{ url_for('static', path='img/6.jpg') }}" alt="Руки Димы и Юли">
                     <img class="photo-orbit__small photo-orbit__small--one" src="{{ url_for('static', path='img/7.jpg') }}" alt="Дима и Юля">
-                    <img class="photo-orbit__small photo-orbit__small--two" src="{{ url_for('static', path='img/10.jpg') }}" alt="Дима и Юля">
+                    <img class="photo-orbit__small photo-orbit__small--two" src="{{ url_for('static', path='img/12.jpg') }}" alt="Дима и Юля">
                 </div>
             </div>
         </section>
@@ -76,7 +76,6 @@
                 <div class="day__sticky reveal reveal-left">
                     <p class="kicker">план дня</p>
                     <h2>Тайминг</h2>
-                    <p>Три главных момента дня. Остальное — живые разговоры, улыбки и праздник.</p>
                 </div>
 
                 <div class="day-cards">
@@ -121,6 +120,7 @@
                 </div>
 
                 <div class="august-card reveal reveal-right" aria-label="Календарь августа">
+                    <div class="august-card__note">Наше «навсегда» начнётся...</div>
                     <div class="august-card__top">
                         <span>август</span>
                         <strong>2026</strong>
@@ -211,43 +211,37 @@
                 <div class="contact-help__copy reveal reveal-left">
                     <p class="kicker">на связи</p>
                     <h2>Если появятся вопросы</h2>
-                    <p>
-                        Если Вы заблудились, готовите сюрприз или у Вас появились какие-либо вопросы в день свадьбы,
-                        Вам с радостью поможет наш ведущий — Рустам. Или, конечно же, мы)
-                    </p>
-
-                    <div class="contact-links contact-links--icons">
-                        <a href="https://t.me/sreltonjin" target="_blank" rel="noopener" aria-label="Telegram Рустама">
-                            <span class="contact-icon">✈</span>
-                            <b>Telegram Рустама</b>
-                        </a>
-                        <a href="https://t.me/julianna_vaaa" target="_blank" rel="noopener" aria-label="Telegram Юлии">
-                            <span class="contact-icon">✈</span>
-                            <b>Telegram Юлии</b>
-                        </a>
-                        <a href="tel:+79178951298" aria-label="Позвонить Рустаму">
-                            <span class="contact-icon">☎</span>
-                            <b>+7 917 895 12 98</b>
-                        </a>
-                    </div>
                 </div>
 
                 <div class="envelope-card reveal reveal-right" aria-label="Контакты ведущего">
                     <div class="envelope-card__body" aria-hidden="true"></div>
                     <div class="envelope-card__flap" aria-hidden="true"></div>
+
                     <div class="envelope-card__paper">
                         <p>
-                            Если Вы заблудились, готовите сюрприз или у Вас появились вопросы в день свадьбы,
-                            Вам с радостью поможет наш ведущий — Рустам.
+                            Если Вы заблудились, готовите сюрприз или у Вас появились какие-либо вопросы в день свадьбы,
+                            Вам с радостью поможет наш ведущий — Рустам. Или, конечно же, мы)
                         </p>
-                        <div class="paper-actions">
-                            <a href="https://t.me/sreltonjin" target="_blank" rel="noopener" aria-label="Telegram Рустама">✈</a>
-                            <a href="tel:+79178951298" aria-label="Позвонить Рустаму">☎</a>
-                            <a href="https://t.me/julianna_vaaa" target="_blank" rel="noopener" aria-label="Telegram Юлии">♡</a>
+
+                        <div class="paper-actions paper-actions--labeled">
+                            <a href="https://t.me/sreltonjin" target="_blank" rel="noopener" aria-label="Telegram Рустама">
+                                <span>✈</span>
+                                <b>Рустам</b>
+                            </a>
+                            <a href="tel:+79178951298" aria-label="Позвонить Рустаму">
+                                <span>☎</span>
+                                <b>Позвонить</b>
+                            </a>
+                            <a href="https://t.me/julianna_vaaa" target="_blank" rel="noopener" aria-label="Telegram Юлии">
+                                <span>♡</span>
+                                <b>Юлия</b>
+                            </a>
                         </div>
+
+                        <img class="envelope-card__photo" src="{{ url_for('static', path='img/10.jpg') }}" alt="Save the date">
                     </div>
+
                     <div class="envelope-card__front" aria-hidden="true"></div>
-                    <img src="{{ url_for('static', path='img/10.jpg') }}" alt="Save the date">
                 </div>
             </div>
         </section>
@@ -296,6 +290,6 @@
         </footer>
     </main>
 
-    <script src="/static/js/app.js?v=13"></script>
+    <script src="/static/js/app.js?v=14"></script>
 </body>
 </html>
