@@ -2969,3 +2969,146 @@ p {
         padding: 0 11px !important;
     }
 }
+
+/* PATCH v9: hide the lower paper edge inside the envelope */
+.envelope-card {
+    min-height: 760px !important;
+    overflow: visible !important;
+}
+
+.envelope-card__body {
+    bottom: 0 !important;
+    height: 58% !important;
+    z-index: 3 !important;
+}
+
+.envelope-card__front {
+    bottom: 0 !important;
+    height: 44% !important;
+    z-index: 14 !important;
+    clip-path: polygon(0 0, 50% 42%, 100% 0, 100% 100%, 0 100%) !important;
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.08),
+        0 -10px 26px rgba(52, 28, 22, 0.08) !important;
+}
+
+.envelope-card__flap {
+    z-index: 10 !important;
+}
+
+.envelope-card.reveal--visible .envelope-card__flap {
+    z-index: 2 !important;
+}
+
+.envelope-card__paper {
+    top: 2% !important;
+    z-index: 8 !important;
+    max-height: 640px !important;
+    overflow: hidden !important;
+    padding: clamp(26px, 3vw, 36px) clamp(20px, 3vw, 34px) clamp(24px, 3vw, 34px) !important;
+    gap: 18px !important;
+    transform: translate(-50%, 315px) rotate(-5deg) scale(0.94) !important;
+}
+
+.envelope-card.reveal--visible .envelope-card__paper {
+    transform: translate(-50%, -18px) rotate(0deg) scale(1) !important;
+}
+
+.envelope-card__paper p {
+    font-size: clamp(18px, 1.45vw, 24px) !important;
+    line-height: 1.38 !important;
+}
+
+.paper-actions--labeled {
+    position: relative !important;
+    z-index: 5 !important;
+    margin: 0 auto !important;
+}
+
+.envelope-card .envelope-card__photo,
+.envelope-card.reveal--visible .envelope-card__photo {
+    position: relative !important;
+    z-index: 3 !important;
+    width: min(100%, 380px) !important;
+    height: 270px !important;
+    margin: 0 auto !important;
+    border-radius: 22px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+}
+
+@media (max-width: 760px) {
+    .envelope-card {
+        min-height: 740px !important;
+        overflow: hidden !important;
+        padding-bottom: 18px !important;
+    }
+
+    .envelope-card__body {
+        bottom: 2% !important;
+        height: 52% !important;
+    }
+
+    .envelope-card__front {
+        bottom: 2% !important;
+        height: 38% !important;
+        clip-path: polygon(0 0, 50% 36%, 100% 0, 100% 100%, 0 100%) !important;
+    }
+
+    .envelope-card__flap {
+        top: 22% !important;
+        height: 205px !important;
+    }
+
+    .envelope-card__paper {
+        top: 2% !important;
+        width: calc(100% - 52px) !important;
+        max-height: 565px !important;
+        padding: 22px 16px 20px !important;
+        gap: 14px !important;
+        transform: translate(-50%, 270px) rotate(-3deg) scale(0.94) !important;
+    }
+
+    .envelope-card.reveal--visible .envelope-card__paper {
+        transform: translate(-50%, -8px) rotate(0deg) scale(1) !important;
+    }
+
+    .envelope-card__paper p {
+        font-size: 16px !important;
+        line-height: 1.36 !important;
+    }
+
+    .paper-actions--labeled {
+        gap: 8px !important;
+    }
+
+    .paper-actions--labeled a {
+        height: 42px !important;
+        min-height: 42px !important;
+        padding: 0 12px !important;
+        font-size: 10px !important;
+    }
+
+    .envelope-card .envelope-card__photo,
+    .envelope-card.reveal--visible .envelope-card__photo {
+        width: min(100%, 330px) !important;
+        height: 230px !important;
+        border-radius: 18px !important;
+    }
+}
+
+@media (max-width: 420px) {
+    .envelope-card {
+        min-height: 700px !important;
+    }
+
+    .envelope-card__paper {
+        width: calc(100% - 44px) !important;
+        max-height: 530px !important;
+    }
+
+    .envelope-card .envelope-card__photo,
+    .envelope-card.reveal--visible .envelope-card__photo {
+        height: 210px !important;
+    }
+}
