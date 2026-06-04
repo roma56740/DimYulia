@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Дима и Юля</title>
     <meta name="description" content="Свадебное приглашение Димы и Юли">
-    <link rel="stylesheet" href="/static/css/style.css?v=14">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=30">
 </head>
 <body>
-    <div class="cursor-light" aria-hidden="true"></div>
-
     <main class="page">
         <section class="hero" id="top">
             <div class="hero__bg">
-                <img src="{{ url_for('static', path='img/11.jpg') }}" alt="Дима и Юля">
+                <img src="{{ url_for('static', path='img/12.jpg') }}" alt="Дима и Юля">
             </div>
-            <div class="hero__noise"></div>
             <div class="hero__shade"></div>
+            <div class="hero__grain"></div>
 
             <header class="topbar">
                 <a href="#day">день</a>
@@ -24,16 +25,18 @@
                 <a href="#rsvp">анкета</a>
             </header>
 
-            <div class="hero__inner">
-                <p class="kicker reveal hero__kicker">она сказала ДА!</p>
-                <h1 class="hero__title" data-split>Дима и Юля</h1>
-                <a class="button button--light reveal reveal-up" href="#timer">смотреть приглашение</a>
+            <div class="hero__content reveal reveal-up">
+                <p class="kicker hero__kicker">она сказала ДА!</p>
+                <h1 class="hero__title">Дима и Юля</h1>
             </div>
 
-            <div class="hero__date-card reveal reveal-left">
-                <span>save the date</span>
-                <strong>26</strong>
-                <small>августа 2026</small>
+            <div class="hero__bottom reveal reveal-up">
+                <a class="button hero__button" href="#timer">смотреть приглашение</a>
+                <div class="hero__date-card">
+                    <span>save the date</span>
+                    <strong>26</strong>
+                    <small>августа 2026</small>
+                </div>
             </div>
         </section>
 
@@ -65,18 +68,17 @@
 
                 <div class="photo-orbit reveal reveal-right">
                     <img class="photo-orbit__main" src="{{ url_for('static', path='img/6.jpg') }}" alt="Руки Димы и Юли">
-                    <img class="photo-orbit__small photo-orbit__small--one" src="{{ url_for('static', path='img/7.jpg') }}" alt="Дима и Юля">
-                    <img class="photo-orbit__small photo-orbit__small--two" src="{{ url_for('static', path='img/10.jpg') }}" alt="Дима и Юля">
+                    <img class="photo-orbit__small photo-orbit__small--one" src="{{ url_for('static', path='img/12.jpg') }}" alt="Дима и Юля">
+                    <img class="photo-orbit__small photo-orbit__small--two" src="{{ url_for('static', path='img/10.jpg') }}" alt="Дима и Юля с плакатом">
                 </div>
             </div>
         </section>
 
         <section class="day" id="day">
             <div class="container day-grid">
-                <div class="day__sticky reveal reveal-left">
+                <div class="day__title reveal reveal-left">
                     <p class="kicker">план дня</p>
                     <h2>Тайминг</h2>
-                    <p>Три главных момента дня. Остальное — живые разговоры, улыбки и праздник.</p>
                 </div>
 
                 <div class="day-cards">
@@ -117,7 +119,7 @@
                 <div class="august-copy reveal reveal-left">
                     <p class="kicker">наш август</p>
                     <h2>День, который мы запомним</h2>
-                    <p>В календаре много дат, но одна станет для нас особенной.</p>
+                    <p>Наше «навсегда» начнётся...</p>
                 </div>
 
                 <div class="august-card reveal reveal-right" aria-label="Календарь августа">
@@ -125,15 +127,9 @@
                         <span>август</span>
                         <strong>2026</strong>
                     </div>
-
                     <div class="august-week">
-                        <span>пн</span>
-                        <span>вт</span>
-                        <span>ср</span>
-                        <span>чт</span>
-                        <span>пт</span>
+                        <span>пн</span><span>вт</span><span>ср</span><span>чт</span><span>пт</span>
                     </div>
-
                     <div class="august-days">
                         <span>24</span>
                         <span>25</span>
@@ -141,7 +137,6 @@
                         <span>27</span>
                         <span>28</span>
                     </div>
-
                     <p>26 августа — день нашей свадьбы</p>
                 </div>
             </div>
@@ -153,7 +148,7 @@
                     <p class="kicker">локация</p>
                     <h2>Место праздника</h2>
                     <p>г. Нижнекамск, банкетный зал Luxor</p>
-                    <a class="button" href="https://yandex.ru/maps/?text=%D0%9D%D0%B8%D0%B6%D0%BD%D0%B5%D0%BA%D0%B0%D0%BC%D1%81%D0%BA%20%D0%B1%D0%B0%D0%BD%D0%BA%D0%B5%D1%82%D0%BD%D1%8B%D0%B9%20%D0%B7%D0%B0%D0%BB%20Luxor" target="_blank">открыть карту</a>
+                    <a class="button button--dark" href="https://yandex.ru/maps/?text=%D0%9D%D0%B8%D0%B6%D0%BD%D0%B5%D0%BA%D0%B0%D0%BC%D1%81%D0%BA%20%D0%B1%D0%B0%D0%BD%D0%BA%D0%B5%D1%82%D0%BD%D1%8B%D0%B9%20%D0%B7%D0%B0%D0%BB%20Luxor" target="_blank" rel="noopener">открыть карту</a>
                 </div>
                 <div class="location-photo reveal reveal-right">
                     <img src="{{ url_for('static', path='img/9.jpg') }}" alt="Дима и Юля">
@@ -168,7 +163,7 @@
                     <h2>Песочные оттенки</h2>
                     <p>Мы очень ждём и с удовольствием готовимся к нашему незабываемому дню! Поддержите нас вашими улыбками и объятиями, а также красивыми нарядами в наших прекрасных оттенках.</p>
                 </div>
-                <div class="palette palette--bubbles reveal reveal-right">
+                <div class="palette reveal reveal-right">
                     <figure class="swatch swatch--1"><span></span><figcaption>молочный</figcaption></figure>
                     <figure class="swatch swatch--2"><span></span><figcaption>кофейный</figcaption></figure>
                     <figure class="swatch swatch--3"><span></span><figcaption>шоколадный</figcaption></figure>
@@ -181,73 +176,39 @@
 
         <section class="details">
             <div class="container">
-                <div class="section-title reveal">
+                <div class="section-title reveal reveal-left">
                     <p class="kicker">детали</p>
                     <h2>Несколько просьб</h2>
                 </div>
                 <div class="detail-row">
-                    <article class="detail-card reveal reveal-left">
-                        <span>01</span>
-                        <p>Будем благодарны, если вы воздержитесь от криков "Горько" на празднике, ведь поцелуй — это знак выражения чувств, и он не может быть по заказу.</p>
-                    </article>
-                    <article class="detail-card reveal reveal-up">
-                        <span>02</span>
-                        <p>Наша семья очень любит цветы! Но через несколько дней после торжества мы улетим в свадебное путешествие и не сможем полностью насладиться букетами. Поэтому вместо цветов можно выбрать бутылку любимого напитка!</p>
-                    </article>
-                    <article class="detail-card reveal reveal-up">
-                        <span>03</span>
-                        <p>Дорогие гости, мы будем благодарны, если вы посвятите нашему дню всё своё внимание и энергию, сможете по-настоящему отдохнуть и развлечься. Поэтому будем признательны, если наш праздник пройдёт в кругу взрослых.</p>
-                    </article>
-                    <article class="detail-card reveal reveal-right">
-                        <span>04</span>
-                        <p>Пожалуйста, не ломайте голову над подарками! Мы будем очень рады вашему приятному вкладу в бюджет нашей молодой семьи.</p>
-                    </article>
+                    <article class="detail-card reveal reveal-up"><span>01</span><p>Будем благодарны, если вы воздержитесь от криков "Горько" на празднике, ведь поцелуй — это знак выражения чувств, и он не может быть по заказу.</p></article>
+                    <article class="detail-card reveal reveal-up"><span>02</span><p>Наша семья очень любит цветы! Но через несколько дней после торжества мы улетим в свадебное путешествие и не сможем полностью насладиться букетами. Поэтому вместо цветов можно выбрать бутылку любимого напитка!</p></article>
+                    <article class="detail-card reveal reveal-up"><span>03</span><p>Дорогие гости, мы будем благодарны, если вы посвятите нашему дню всё своё внимание и энергию, сможете по-настоящему отдохнуть и развлечься. Поэтому будем признательны, если наш праздник пройдёт в кругу взрослых.</p></article>
+                    <article class="detail-card reveal reveal-up"><span>04</span><p>Пожалуйста, не ломайте голову над подарками! Мы будем очень рады вашему приятному вкладу в бюджет нашей молодой семьи.</p></article>
                 </div>
             </div>
         </section>
 
         <section class="contact-help" id="contacts">
-            <div class="container contact-help__grid">
-                <div class="contact-help__copy reveal reveal-left">
+            <div class="container contact-grid">
+                <div class="contact-heading reveal reveal-left">
                     <p class="kicker">на связи</p>
                     <h2>Если появятся вопросы</h2>
-                    <p>
-                        Если Вы заблудились, готовите сюрприз или у Вас появились какие-либо вопросы в день свадьбы,
-                        Вам с радостью поможет наш ведущий — Рустам. Или, конечно же, мы)
-                    </p>
-
-                    <div class="contact-links contact-links--icons">
-                        <a href="https://t.me/sreltonjin" target="_blank" rel="noopener" aria-label="Telegram Рустама">
-                            <span class="contact-icon">✈</span>
-                            <b>Telegram Рустама</b>
-                        </a>
-                        <a href="https://t.me/julianna_vaaa" target="_blank" rel="noopener" aria-label="Telegram Юлии">
-                            <span class="contact-icon">✈</span>
-                            <b>Telegram Юлии</b>
-                        </a>
-                        <a href="tel:+79178951298" aria-label="Позвонить Рустаму">
-                            <span class="contact-icon">☎</span>
-                            <b>+7 917 895 12 98</b>
-                        </a>
-                    </div>
                 </div>
 
                 <div class="envelope-card reveal reveal-right" aria-label="Контакты ведущего">
-                    <div class="envelope-card__body" aria-hidden="true"></div>
-                    <div class="envelope-card__flap" aria-hidden="true"></div>
-                    <div class="envelope-card__paper">
-                        <p>
-                            Если Вы заблудились, готовите сюрприз или у Вас появились вопросы в день свадьбы,
-                            Вам с радостью поможет наш ведущий — Рустам.
-                        </p>
+                    <div class="envelope-back" aria-hidden="true"></div>
+                    <div class="envelope-paper">
+                        <p>Если Вы заблудились, готовите сюрприз или у Вас появились какие-либо вопросы в день свадьбы, Вам с радостью поможет наш ведущий — Рустам. Или, конечно же, мы)</p>
                         <div class="paper-actions">
                             <a href="https://t.me/sreltonjin" target="_blank" rel="noopener" aria-label="Telegram Рустама">✈</a>
                             <a href="tel:+79178951298" aria-label="Позвонить Рустаму">☎</a>
                             <a href="https://t.me/julianna_vaaa" target="_blank" rel="noopener" aria-label="Telegram Юлии">♡</a>
                         </div>
+                        <img src="{{ url_for('static', path='img/10.jpg') }}" alt="Дима и Юля с плакатом">
                     </div>
-                    <div class="envelope-card__front" aria-hidden="true"></div>
-                    <img src="{{ url_for('static', path='img/10.jpg') }}" alt="Save the date">
+                    <div class="envelope-front" aria-hidden="true"></div>
+                    <div class="envelope-flap" aria-hidden="true"></div>
                 </div>
             </div>
         </section>
@@ -264,29 +225,25 @@
                     <label><span>Присутствие</span><select name="status" required><option value="">Выберите вариант</option><option value="yes">Буду</option><option value="no">Не смогу прийти</option></select></label>
                     <label><span>Комментарий</span><textarea name="comment" rows="4" placeholder="Пожелания или важные детали"></textarea></label>
                     <button type="submit">отправить ответ</button>
-                    <p class="form-success">Спасибо! Ответ сохранён на экране.</p>
+                    <p class="form-success">Спасибо! Ответ отправлен.</p>
                 </form>
             </div>
         </section>
 
         <section class="final">
             <div class="container final-grid">
-                <div class="final-copy reveal">
+                <div class="final-copy reveal reveal-left">
                     <p class="kicker kicker--light">финал</p>
                     <h2>До встречи на свадьбе</h2>
                     <p>Пусть это видео станет началом большого праздника.</p>
                 </div>
-                <div class="video-card reveal reveal-zoom">
-                    <video controls playsinline preload="metadata" poster="{{ url_for('static', path='img/11.jpg') }}">
+                <div class="video-card reveal reveal-right">
+                    <video controls playsinline preload="metadata" poster="{{ url_for('static', path='img/12.jpg') }}">
                         <source src="{{ url_for('static', path='video/wedding.mp4') }}" type="video/mp4">
                         Видео не поддерживается вашим браузером.
                     </video>
                 </div>
-
-                <div class="love-signature reveal reveal-up">
-                    <span>С любовью,</span>
-                    <strong>Дмитрий и Юлия</strong>
-                </div>
+                <div class="signature reveal reveal-up">С любовью, Дмитрий и Юлия</div>
             </div>
         </section>
 
@@ -296,6 +253,6 @@
         </footer>
     </main>
 
-    <script src="/static/js/app.js?v=13"></script>
+    <script src="/static/js/app.js?v=30"></script>
 </body>
 </html>
