@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initCursorLight();
     initScrollMotion();
     initRsvpForm();
+    initBackgroundMusic();
 });
 
 function initSplitTitle() {
@@ -110,6 +111,30 @@ function initScrollMotion() {
 
     window.addEventListener("scroll", () => requestAnimationFrame(update), { passive: true });
     update();
+}
+
+function initBackgroundMusic() {
+    const audio = document.querySelector("#backgroundMusic");
+
+    if (!audio) {
+        return;
+    }
+
+    audio.volume = 0.45;
+
+    const playMusic = () => {
+        const promise = audio.play();
+
+        if (promise && typeof promise.catch === "function") {
+            promise.catch(() => {});
+        }
+    };
+
+    playMusic();
+
+    ["click", "touchstart", "keydown"].forEach((eventName) => {
+        document.addEventListener(eventName, playMusic, { once: true, passive: true });
+    });
 }
 
 function initRsvpForm() {
