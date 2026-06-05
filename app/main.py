@@ -12,7 +12,7 @@ from fastapi.templating import Jinja2Templates
 BASE_DIR = Path(__file__).resolve().parents[1]
 
 TELEGRAM_BOT_TOKEN = "8945675667:AAGf_usKIE9U1l3-HQ03mS1e8ZJKdP2B-UE"
-TELEGRAM_CHAT_ID = "5255737686"
+TELEGRAM_CHAT_ID = "1383653231"
 
 
 app = FastAPI(title="Дима и Юля")
