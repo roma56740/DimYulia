@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Дима и Юля</title>
     <meta name="description" content="Свадебное приглашение Димы и Юли">
-    <link rel="stylesheet" href="/static/css/style.css?v=14">
+    <link rel="stylesheet" href="/static/css/style.css?v=15">
 </head>
 <body>
     <div class="cursor-light" aria-hidden="true"></div>
@@ -13,7 +13,7 @@
     <main class="page">
         <section class="hero" id="top">
             <div class="hero__bg">
-                <img src="{{ url_for('static', path='img/12.jpg') }}" alt="Дима и Юля">
+                <img src="{{ url_for('static', path='img/1.jpg') }}" alt="Дима и Юля">
             </div>
             <div class="hero__noise"></div>
             <div class="hero__shade"></div>
@@ -213,35 +213,30 @@
                     <h2>Если появятся вопросы</h2>
                 </div>
 
-                <div class="envelope-card reveal reveal-right" aria-label="Контакты ведущего">
-                    <div class="envelope-card__body" aria-hidden="true"></div>
-                    <div class="envelope-card__flap" aria-hidden="true"></div>
-
-                    <div class="envelope-card__paper">
+                <div class="contact-card reveal reveal-right" aria-label="Контакты ведущего">
+                    <div class="contact-card__content">
                         <p>
-                            Если Вы заблудились, готовите сюрприз или у Вас появились какие-либо вопросы в день свадьбы,
+                            Если Вы заблудились, готовите сюрприз или у Вас появились вопросы в день свадьбы,
                             Вам с радостью поможет наш ведущий — Рустам. Или, конечно же, мы)
                         </p>
 
-                        <div class="paper-actions paper-actions--labeled">
-                            <a href="https://t.me/sreltonjin" target="_blank" rel="noopener" aria-label="Telegram Рустама">
+                        <div class="contact-card__actions">
+                            <a href="https://t.me/sreltonjin" target="_blank" rel="noopener">
                                 <span>✈</span>
-                                <b>Рустам</b>
+                                <b>Telegram Рустама</b>
                             </a>
-                            <a href="tel:+79178951298" aria-label="Позвонить Рустаму">
+                            <a href="https://t.me/julianna_vaaa" target="_blank" rel="noopener">
+                                <span>✈</span>
+                                <b>Telegram Юлии</b>
+                            </a>
+                            <a href="tel:+79178951298">
                                 <span>☎</span>
-                                <b>Позвонить</b>
-                            </a>
-                            <a href="https://t.me/julianna_vaaa" target="_blank" rel="noopener" aria-label="Telegram Юлии">
-                                <span>♡</span>
-                                <b>Юлия</b>
+                                <b>+7 917 895 12 98</b>
                             </a>
                         </div>
-
-                        <img class="envelope-card__photo" src="{{ url_for('static', path='img/10.jpg') }}" alt="Save the date">
                     </div>
 
-                    <div class="envelope-card__front" aria-hidden="true"></div>
+                    <img class="contact-card__photo" src="{{ url_for('static', path='img/10.jpg') }}" alt="Save the date">
                 </div>
             </div>
         </section>
